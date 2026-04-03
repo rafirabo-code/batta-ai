@@ -53,13 +53,26 @@
       margin-top: -5vh;
     }
 
-    .subtitle {
+    .top-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      opacity: 0;
+      animation: fadeDown 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+
+    .top-banner span {
       font-size: clamp(14px, 2vw, 20px);
       font-weight: 400;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       color: #ffffff;
-      opacity: 0;
-      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
     }
 
     .title {
@@ -261,6 +274,11 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 480px) {
       .content { margin-top: -8vh; }
       .btn { font-size: 13px; padding: 12px 26px; }
@@ -275,10 +293,12 @@
     <div class="bg">
       <img src="batta3.png" alt="Serene landscape with mountains, river, and ducks" />
     </div>
+    <div class="top-banner">
+      <span>Coming soon...</span>
+    </div>
     <div class="content">
-      <span class="subtitle">Coming soon...</span>
       <h1 class="title">Batta</h1>
-      <p class="tagline">Calm at any speed.</p>
+      <p class="tagline">The trust to run faster.</p>
       <div class="cta">
         <button class="btn" id="waitlistBtn">Join the waitlist</button>
       </div>
